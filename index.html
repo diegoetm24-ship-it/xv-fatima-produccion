@@ -28,7 +28,6 @@
             scroll-snap-type: y mandatory; scroll-behavior: smooth;
         }
 
-        /* Pantallas estandarizadas a 100vh */
         .full-screen {
             height: 100vh; width: 100vw;
             scroll-snap-align: start;
@@ -37,7 +36,6 @@
             position: relative; box-sizing: border-box; padding: 20px;
         }
 
-        /* Pantallas de contenido extenso (Scroll dinámico) */
         .auto-screen {
             min-height: 100vh; height: auto; width: 100vw;
             scroll-snap-align: start;
@@ -97,7 +95,6 @@
             margin-top: 15px; text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
         }
 
-        /* Itinerario */
         .timeline {
             position: relative; max-width: 400px; width: 100%; margin: 30px auto 0;
         }
@@ -132,15 +129,15 @@
 
 <div class="scroll-container">
     
-    <!-- 1. HERO CON CONTADOR -->
+    <!-- 1. HERO CON FOCALIZACIÓN SUPERIOR -->
     <section class="full-screen" style="
         background-image: linear-gradient(rgba(228, 124, 148, 0.4), rgba(92, 42, 53, 0.8)), url('img/QB5A9106.jpg');
-        background-size: cover; background-position: center; color: white;
+        background-size: cover; background-position: top center; color: white;
     ">
-        <div class="anim-fade" style="text-align: center;">
-            <p style="font-family: var(--font-cursive); font-size: 2rem; margin-bottom: 5px;">Mis XV Años</p>
-            <h1 class="cursive-title" style="text-shadow: 2px 4px 10px rgba(0,0,0,0.5);">Fátima Natalia</h1>
-            <p style="font-size: 1.2rem; letter-spacing: 3px; margin-top: 15px; font-weight: 600;">19 • 09 • 2026</p>
+        <div class="anim-fade" style="text-align: center; margin-top: 15vh;">
+            <p style="font-family: var(--font-cursive); font-size: 2.2rem; margin-bottom: 5px; text-shadow: 1px 2px 8px rgba(0,0,0,0.4);">Mis XV Años</p>
+            <h1 class="cursive-title" style="text-shadow: 2px 4px 12px rgba(0,0,0,0.6);">Fátima Natalia</h1>
+            <p style="font-size: 1.2rem; letter-spacing: 3px; margin-top: 15px; font-weight: 600; text-shadow: 1px 2px 6px rgba(0,0,0,0.5);">19 • 09 • 2026</p>
             <div class="countdown-timer" id="timer">00:00:00:00</div>
         </div>
     </section>
@@ -159,7 +156,7 @@
         </div>
     </section>
 
-    <!-- 3. UBICACIÓN (Full Screen con Overlay de la Hacienda) -->
+    <!-- 3. UBICACIÓN -->
     <section class="full-screen" style="
         background-image: linear-gradient(rgba(228, 124, 148, 0.75), rgba(92, 42, 53, 0.92)), url('img/imagensalon.jpg');
         background-size: cover; background-position: center; color: white; text-align: center;
@@ -167,106 +164,84 @@
         <div class="anim-up" style="width: 100%; max-width: 500px; padding: 20px; box-sizing: border-box;">
             <div class="elegant-label" style="color: white; text-shadow: 1px 1px 4px rgba(0,0,0,0.5);">Recepción</div>
             <h2 class="cursive-subtitle" style="color: white; font-size: 4rem; text-shadow: 2px 4px 10px rgba(0,0,0,0.5); margin: 10px 0;">Hacienda San Marcos</h2>
-            
             <p style="font-size: 1.4rem; font-weight: bold; margin-top: 15px; text-shadow: 1px 2px 5px rgba(0,0,0,0.5); letter-spacing: 1px;">Sábado 19 de Septiembre • 2:30 P.M.</p>
             <p style="font-size: 1.1rem; line-height: 1.6; margin: 15px auto; max-width: 90%; text-shadow: 1px 2px 5px rgba(0,0,0,0.5);">Av. San Mateo Nopala #124, Col. Santiago Occipaco, Naucalpan, Estado de México</p>
-            
             <a href="https://maps.app.goo.gl/nKpehFAfJxwtw5LdA" target="_blank" class="btn-gold" style="margin-top: 25px;">Abrir en Maps 📍</a>
         </div>
     </section>
 
-    <!-- 4. DRESS CODE -->
+    <!-- 4. DRESS CODE REESTRUCTURADO -->
     <section class="full-screen" style="background-color: white;">
-        <div class="anim-up" style="text-align: center; width: 100%;">
+        <div class="anim-up" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; text-align: center;">
             <div class="elegant-label" style="font-size: 1.5rem; letter-spacing: 6px;">Dress Code</div>
-            <svg width="180" height="180" viewBox="0 0 100 100" style="margin: 25px auto; display: block;">
-                <path d="M 30,30 Q 35,40 40,50 L 20,90 L 50,90 L 50,50 Q 50,40 30,30 Z" fill="none" stroke="var(--text-dark)" stroke-width="2.5"/>
-                <path d="M 60,30 L 80,30 L 85,60 L 75,90 L 65,90 L 70,60 L 60,90 L 50,90 L 55,60 L 60,30 Z" fill="none" stroke="var(--text-dark)" stroke-width="2.5"/>
-                <circle cx="40" cy="18" r="6" fill="none" stroke="var(--gold-accent)" stroke-width="2.5"/>
-                <circle cx="70" cy="18" r="6" fill="none" stroke="var(--gold-accent)" stroke-width="2.5"/>
+            
+            <svg width="180" height="180" viewBox="0 0 100 100" style="margin: 20px 0 10px 0;">
+                <g transform="translate(-2, 0)">
+                    <path d="M 30,30 Q 35,40 40,50 L 20,90 L 50,90 L 50,50 Q 50,40 30,30 Z" fill="none" stroke="var(--text-dark)" stroke-width="2.5"/>
+                    <path d="M 60,30 L 80,30 L 85,60 L 75,90 L 65,90 L 70,60 L 60,90 L 50,90 L 55,60 L 60,30 Z" fill="none" stroke="var(--text-dark)" stroke-width="2.5"/>
+                    <circle cx="40" cy="18" r="6" fill="none" stroke="var(--gold-accent)" stroke-width="2.5"/>
+                    <circle cx="70" cy="18" r="6" fill="none" stroke="var(--gold-accent)" stroke-width="2.5"/>
+                </g>
             </svg>
-            <h2 class="cursive-subtitle" style="font-size: 5rem; margin: 20px 0;">Formal</h2>
-            <p style="font-style: italic; color: #777; margin-top: 20px; font-size: 1.2rem; max-width: 85%; margin-left: auto; margin-right: auto;">
-                *El color rosa está estrictamente reservado para la Quinceañera.
+            
+            <h2 class="cursive-subtitle" style="font-size: 5.5rem; margin: 0; line-height: 1;">Formal</h2>
+            <p style="font-size: 1.6rem; font-weight: 600; color: var(--gold-accent); margin-top: 10px; letter-spacing: 2px; text-transform: uppercase;">
+                (Con Bota)
             </p>
         </div>
     </section>
 
-    <!-- 5. ITINERARIO DETALLADO -->
+    <!-- 5. ITINERARIO -->
     <section class="auto-screen" style="background-color: var(--bg-light);">
         <div class="anim-up" style="width: 100%; text-align: center;">
             <h2 class="cursive-subtitle" style="color: var(--gold-accent); font-size: 4rem; margin-bottom: 10px;">Itinerario</h2>
             <p style="font-family: var(--font-serif); font-size: 1.2rem; letter-spacing: 2px;">Una noche inolvidable</p>
             
             <div class="timeline">
-                <!-- 2:30 PM -->
                 <div class="timeline-item left">
-                    <div class="timeline-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold-accent)"><path d="M12 2L2 22h20L12 2zm0 3.8l6.2 14.2H5.8L12 5.8z"/></svg>
-                    </div>
+                    <div class="timeline-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold-accent)"><path d="M12 2L2 22h20L12 2zm0 3.8l6.2 14.2H5.8L12 5.8z"/></svg></div>
                     <span class="time-label">2:30 PM</span>
                     <p class="activity-title">Recepción</p>
                     <p class="activity-desc">¡Bienvenidos a mi gran día!</p>
                 </div>
-                <!-- 3:00 PM -->
                 <div class="timeline-item right">
-                    <div class="timeline-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold-accent)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-4H7v-2h2V8h2v2h2v2h-2v4z"/></svg>
-                    </div>
+                    <div class="timeline-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold-accent)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-4H7v-2h2V8h2v2h2v2h-2v4z"/></svg></div>
                     <span class="time-label">3:00 PM</span>
                     <p class="activity-title">Misa</p>
                     <p class="activity-desc">Un momento para agradecer</p>
                 </div>
-                <!-- 4:00 PM -->
                 <div class="timeline-item left">
-                    <div class="timeline-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold-accent)"><path d="M21 5V3H3v2l8 9v5H6v2h12v-2h-5v-5l8-9zM7.43 7L5.66 5h12.69l-1.78 2H7.43z"/></svg>
-                    </div>
+                    <div class="timeline-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold-accent)"><path d="M21 5V3H3v2l8 9v5H6v2h12v-2h-5v-5l8-9zM7.43 7L5.66 5h12.69l-1.78 2H7.43z"/></svg></div>
                     <span class="time-label">4:00 PM</span>
-                    <p class="activity-title">Cóctel de bienvenida</p>
+                    <p class="activity-title">Cóctel</p>
                     <p class="activity-desc">¡Que empiece la celebración!</p>
                 </div>
-                <!-- 4:30 PM -->
                 <div class="timeline-item right">
-                    <div class="timeline-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold-accent)"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
-                    </div>
+                    <div class="timeline-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold-accent)"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg></div>
                     <span class="time-label">4:30 PM</span>
                     <p class="activity-title">Comida</p>
                     <p class="activity-desc">A disfrutar se ha dicho</p>
                 </div>
-                <!-- 7:00 PM -->
                 <div class="timeline-item left">
-                    <div class="timeline-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold-accent)"><path d="M12 2l-2.5 5H3l4 4-1.5 5 4.5-3 4.5 3-1.5-5 4-4h-6.5z"/></svg>
-                    </div>
+                    <div class="timeline-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold-accent)"><path d="M12 2l-2.5 5H3l4 4-1.5 5 4.5-3 4.5 3-1.5-5 4-4h-6.5z"/></svg></div>
                     <span class="time-label">7:00 PM</span>
                     <p class="activity-title">Vals · Brindis · Pastel</p>
                     <p class="activity-desc">El momento de los XV</p>
                 </div>
-                <!-- 8:00 PM -->
                 <div class="timeline-item right">
-                    <div class="timeline-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold-accent)"><path d="M17 10h-2V4c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v6H5c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2zM9 4h4v6H9V4zm10 16H5v-8h14v8z"/></svg>
-                    </div>
+                    <div class="timeline-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold-accent)"><path d="M17 10h-2V4c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v6H5c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2zM9 4h4v6H9V4zm10 16H5v-8h14v8z"/></svg></div>
                     <span class="time-label">8:00 PM</span>
                     <p class="activity-title">¡Ponte las botas!</p>
                     <p class="activity-desc">Porque después del vals... ¡se viene lo bueno!</p>
                 </div>
-                <!-- 10:00 PM -->
                 <div class="timeline-item left">
-                    <div class="timeline-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold-accent)"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
-                    </div>
+                    <div class="timeline-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold-accent)"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg></div>
                     <span class="time-label">10:00 PM</span>
                     <p class="activity-title">¡Torna Fiesta!</p>
                     <p class="activity-desc">Subimos el volumen y bajamos la formalidad</p>
                 </div>
-                <!-- 12:00 AM -->
                 <div class="timeline-item right">
-                    <div class="timeline-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold-accent)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-                    </div>
+                    <div class="timeline-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold-accent)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
                     <span class="time-label">12:00 AM</span>
                     <p class="activity-title">¿Fin de la fiesta?</p>
                     <p class="activity-desc">Solo si el cuerpo ya no puede más...</p>
@@ -277,26 +252,30 @@
 
     <!-- 6. RSVP -->
     <section class="split-screen">
-        <div class="img-half" style="background-image: url('img/QB5A9220.jpg');"></div>
+        <div class="img-half" style="background-image: url('img/QB5A9220.jpg'); background-position: top center;"></div>
         <div class="text-half anim-up">
             <h2 class="cursive-subtitle" style="font-size: 3.5rem;">Confirmación</h2>
             <p style="font-size: 1.2rem;">Familia <strong id="fam-name" style="color: var(--gold-accent); font-size: 1.4rem;">Invitado</strong></p>
             <p style="font-size: 1rem;">Pases reservados: <strong id="pass-count">0</strong></p>
-            
-            <div id="rsvp-container" style="width: 100%; max-width: 320px; margin-top: 20px;">
-                <!-- Inyección JS -->
-            </div>
+            <div id="rsvp-container" style="width: 100%; max-width: 320px; margin-top: 20px;"></div>
         </div>
     </section>
 
-    <!-- 7. CIERRE -->
+    <!-- 7. CIERRE CON FOCALIZACIÓN SUPERIOR -->
     <section class="full-screen" style="
         background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(92, 42, 53, 0.95)), url('img/QB5A9106.jpg');
-        background-size: cover; background-position: center 20%; color: white; justify-content: flex-end; padding-bottom: 80px;
+        background-size: cover; background-position: top center; color: white; justify-content: flex-end; padding-bottom: 80px;
     ">
         <div class="anim-fade" style="text-align: center;">
             <h2 class="cursive-subtitle" style="color: white; font-size: 4rem; text-shadow: 2px 2px 10px rgba(0,0,0,0.8);">¡Gracias por acompañarme!</h2>
             <p style="font-style: italic; font-size: 1.4rem; letter-spacing: 1px;">Nos vemos pronto.</p>
+            
+            <!-- WATERMARK COMERCIAL -->
+            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-top: 40px; font-family: var(--font-serif); letter-spacing: 1px;">
+                <a href="https://wa.me/525500000000?text=Hola%20Diego,%20vi%20la%20invitaci%C3%B3n%20de%20F%C3%A1tima%20y%20me%20interesa%20una%20arquitectura%20similar." target="_blank" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 2px;">
+                    Tecnología y despliegue por Diego Torres
+                </a>
+            </p>
         </div>
     </section>
 
