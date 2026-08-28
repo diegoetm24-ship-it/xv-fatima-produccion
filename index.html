@@ -65,18 +65,18 @@
 
         h1.cursive-title {
             font-family: var(--font-cursive); font-size: clamp(3.5rem, 12vw, 5rem);
-            margin: 10px 0; font-weight: normal;
+            margin: 10px 0; font-weight: normal; text-align: center;
         }
         h2.cursive-subtitle {
             font-family: var(--font-cursive); font-size: clamp(3rem, 10vw, 4rem);
-            margin: 0 0 10px 0; color: var(--text-dark); font-weight: normal;
+            margin: 0 0 10px 0; color: var(--text-dark); font-weight: normal; text-align: center;
         }
         
         .elegant-label {
             font-family: var(--font-serif); font-size: 1.2rem; letter-spacing: 4px;
-            text-transform: uppercase; color: var(--gold-accent); margin-bottom: 5px;
+            text-transform: uppercase; color: var(--gold-accent); margin-bottom: 5px; text-align: center;
         }
-        p { font-size: 1.1rem; line-height: 1.6; margin: 5px 0; }
+        p { font-size: 1.1rem; line-height: 1.6; margin: 5px 0; text-align: center; }
 
         .anim-up { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; }
         .anim-fade { opacity: 0; transition: all 1s ease-in; }
@@ -92,7 +92,7 @@
 
         .countdown-timer {
             font-size: 1.6rem; font-weight: 600; letter-spacing: 4px;
-            margin-top: 15px; text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+            margin-top: 15px; text-shadow: 2px 4px 10px rgba(0,0,0,0.5); text-align: center;
         }
 
         .timeline {
@@ -129,12 +129,12 @@
 
 <div class="scroll-container">
     
-    <!-- 1. HERO CON FOCALIZACIÓN SUPERIOR -->
+    <!-- 1. HERO FOCALIZADO (El ancla 35% centra el cuerpo sin cortar la cabeza) -->
     <section class="full-screen" style="
         background-image: linear-gradient(rgba(228, 124, 148, 0.4), rgba(92, 42, 53, 0.8)), url('img/QB5A9106.jpg');
-        background-size: cover; background-position: top center; color: white;
+        background-size: cover; background-position: center 35%; color: white;
     ">
-        <div class="anim-fade" style="text-align: center; margin-top: 15vh;">
+        <div class="anim-fade" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
             <p style="font-family: var(--font-cursive); font-size: 2.2rem; margin-bottom: 5px; text-shadow: 1px 2px 8px rgba(0,0,0,0.4);">Mis XV Años</p>
             <h1 class="cursive-title" style="text-shadow: 2px 4px 12px rgba(0,0,0,0.6);">Fátima Natalia</h1>
             <p style="font-size: 1.2rem; letter-spacing: 3px; margin-top: 15px; font-weight: 600; text-shadow: 1px 2px 6px rgba(0,0,0,0.5);">19 • 09 • 2026</p>
@@ -148,7 +148,7 @@
         <div class="text-half anim-up">
             <h2 class="cursive-subtitle">Mis Padres</h2>
             <p style="font-size: 1.3rem;">Héctor Alfredo Gil Peña<br>Ariadna Alvarado Nolasco</p>
-            <div style="margin: 20px 0;">
+            <div style="margin: 20px 0; display: flex; justify-content: center; width: 100%;">
                 <svg width="30" height="30" viewBox="0 0 24 24" fill="var(--gold-accent)"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
             </div>
             <h2 class="cursive-subtitle">Mis Padrinos</h2>
@@ -170,7 +170,7 @@
         </div>
     </section>
 
-    <!-- 4. DRESS CODE REESTRUCTURADO -->
+    <!-- 4. DRESS CODE SIMÉTRICO Y LIMPIO -->
     <section class="full-screen" style="background-color: white;">
         <div class="anim-up" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; text-align: center;">
             <div class="elegant-label" style="font-size: 1.5rem; letter-spacing: 6px;">Dress Code</div>
@@ -261,16 +261,15 @@
         </div>
     </section>
 
-    <!-- 7. CIERRE CON FOCALIZACIÓN SUPERIOR -->
+    <!-- 7. CIERRE FOCALIZADO -->
     <section class="full-screen" style="
         background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(92, 42, 53, 0.95)), url('img/QB5A9106.jpg');
-        background-size: cover; background-position: top center; color: white; justify-content: flex-end; padding-bottom: 80px;
+        background-size: cover; background-position: center 35%; color: white; justify-content: flex-end; padding-bottom: 80px;
     ">
         <div class="anim-fade" style="text-align: center;">
             <h2 class="cursive-subtitle" style="color: white; font-size: 4rem; text-shadow: 2px 2px 10px rgba(0,0,0,0.8);">¡Gracias por acompañarme!</h2>
             <p style="font-style: italic; font-size: 1.4rem; letter-spacing: 1px;">Nos vemos pronto.</p>
             
-            <!-- WATERMARK COMERCIAL -->
             <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-top: 40px; font-family: var(--font-serif); letter-spacing: 1px;">
                 <a href="https://wa.me/525500000000?text=Hola%20Diego,%20vi%20la%20invitaci%C3%B3n%20de%20F%C3%A1tima%20y%20me%20interesa%20una%20arquitectura%20similar." target="_blank" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 2px;">
                     Tecnología y despliegue por Diego Torres
