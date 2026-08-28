@@ -129,7 +129,7 @@
 
 <div class="scroll-container">
     
-    <!-- 1. HERO (Offset en X al 46% para empujar la foto a la izquierda exacto en el eje de los rostros) -->
+    <!-- 1. HERO FOCALIZADO -->
     <section class="full-screen" style="
         background-image: linear-gradient(rgba(228, 124, 148, 0.4), rgba(92, 42, 53, 0.8)), url('img/QB5A9106.jpg');
         background-size: cover; background-position: 46% 25%; color: white;
@@ -170,12 +170,12 @@
         </div>
     </section>
 
-    <!-- 4. DRESS CODE (Fijando el centro óptico con traslación) -->
+    <!-- 4. DRESS CODE (Corrección óptica de la caja tipográfica) -->
     <section class="full-screen" style="background-color: white;">
         <div class="anim-up" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; text-align: center;">
             <div class="elegant-label" style="font-size: 1.5rem; letter-spacing: 6px;">Dress Code</div>
             
-            <svg width="180" height="180" viewBox="0 0 100 100" style="margin: 20px 0 10px 0; transform: translateX(-12px);">
+            <svg width="180" height="180" viewBox="0 0 100 100" style="margin: 20px 0 10px 0; transform: translateX(-6px);">
                 <g transform="translate(-2, 0)">
                     <path d="M 30,30 Q 35,40 40,50 L 20,90 L 50,90 L 50,50 Q 50,40 30,30 Z" fill="none" stroke="var(--text-dark)" stroke-width="2.5"/>
                     <path d="M 60,30 L 80,30 L 85,60 L 75,90 L 65,90 L 70,60 L 60,90 L 50,90 L 55,60 L 60,30 Z" fill="none" stroke="var(--text-dark)" stroke-width="2.5"/>
@@ -184,7 +184,8 @@
                 </g>
             </svg>
             
-            <h2 class="cursive-subtitle" style="font-size: 5.5rem; margin: 0; line-height: 1;">Formal</h2>
+            <!-- Offset de -20px inyectado para contrarrestar el peso visual de la letra F -->
+            <h2 class="cursive-subtitle" style="font-size: 5.5rem; margin: 0; line-height: 1; transform: translateX(-20px);">Formal</h2>
             <p style="font-size: 1.6rem; font-weight: 600; color: var(--gold-accent); margin-top: 10px; letter-spacing: 2px; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 8px;">
                 👢 (Con Bota)
             </p>
