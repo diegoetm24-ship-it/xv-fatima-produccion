@@ -23,13 +23,11 @@
             overflow: hidden; 
         }
 
-        /* Contenedor principal de Snap */
         .scroll-container {
             height: 100vh; overflow-y: scroll;
             scroll-snap-type: y mandatory; scroll-behavior: smooth;
         }
 
-        /* Pantallas Completas (Hero y Final) */
         .full-screen {
             height: 100vh; width: 100vw;
             scroll-snap-align: start;
@@ -38,81 +36,80 @@
             position: relative; box-sizing: border-box; padding: 20px;
         }
 
-        /* Arquitectura Pantalla Dividida (Split Screen) */
         .split-screen {
             height: 100vh; width: 100vw;
             scroll-snap-align: start;
             display: flex; flex-direction: column;
         }
         
+        /* Ajuste de ratios para dar más espacio al contenido inflado */
         .img-half {
-            height: 45vh; width: 100%;
+            height: 40vh; width: 100%;
             background-size: cover; background-position: center; background-repeat: no-repeat;
             position: relative;
         }
         
         .text-half {
-            height: 55vh; width: 100%;
+            height: 60vh; width: 100%;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
-            padding: 25px; box-sizing: border-box; background: var(--bg-light);
+            padding: 20px; box-sizing: border-box; background: var(--bg-light);
             text-align: center; position: relative;
         }
 
-        /* Tipografía */
         h1.cursive-title {
             font-family: var(--font-cursive); font-size: clamp(3.5rem, 12vw, 5rem);
             margin: 10px 0; font-weight: normal;
         }
         h2.cursive-subtitle {
-            font-family: var(--font-cursive); font-size: clamp(2.8rem, 10vw, 3.8rem);
+            font-family: var(--font-cursive); font-size: clamp(3rem, 10vw, 4rem);
             margin: 0 0 10px 0; color: var(--text-dark); font-weight: normal;
         }
+        
+        /* Etiquetas redimensionadas */
         .elegant-label {
-            font-family: var(--font-serif); font-size: 0.9rem; letter-spacing: 3px;
+            font-family: var(--font-serif); font-size: 1.2rem; letter-spacing: 4px;
             text-transform: uppercase; color: var(--gold-accent); margin-bottom: 5px;
         }
         p { font-size: 1.1rem; line-height: 1.6; margin: 5px 0; }
 
-        /* Animaciones */
         .anim-up { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; }
         .anim-fade { opacity: 0; transition: all 1s ease-in; }
         .visible { opacity: 1; transform: translate(0, 0); }
 
-        /* UI Elements */
         .btn-gold {
-            display: inline-block; margin-top: 15px; padding: 12px 35px;
+            display: inline-block; margin-top: 20px; padding: 15px 40px; font-size: 1.1rem;
             background-color: var(--gold-accent); color: white; text-decoration: none;
-            border-radius: 30px; font-weight: 600; letter-spacing: 1px; border: none; cursor: pointer;
+            border-radius: 35px; font-weight: 600; letter-spacing: 1px; border: none; cursor: pointer;
             box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4); font-family: var(--font-serif);
         }
         .btn-gold:disabled { background-color: #ccc; box-shadow: none; }
 
-        /* Itinerario (Línea central elegante) */
+        /* Itinerario Ampliado */
         .timeline {
-            position: relative; max-width: 320px; width: 100%; margin: 20px auto;
+            position: relative; max-width: 360px; width: 100%; margin: 30px auto;
         }
         .timeline::after {
             content: ''; position: absolute; width: 2px; background-color: var(--gold-accent);
             top: 0; bottom: 0; left: 50%; margin-left: -1px;
         }
         .timeline-item {
-            padding: 10px 40px; position: relative; background-color: inherit; width: 50%; box-sizing: border-box;
+            padding: 15px 30px; position: relative; background-color: inherit; width: 50%; box-sizing: border-box;
         }
         .timeline-item::after {
-            content: ''; position: absolute; width: 12px; height: 12px; right: -6px;
-            background-color: var(--bg-light); border: 2px solid var(--gold-accent);
-            top: 15px; border-radius: 50%; z-index: 1;
+            content: ''; position: absolute; width: 14px; height: 14px; right: -7px;
+            background-color: var(--bg-light); border: 3px solid var(--gold-accent);
+            top: 20px; border-radius: 50%; z-index: 1;
         }
         .left { left: 0; text-align: right; }
         .right { left: 50%; text-align: left; }
-        .right::after { left: -8px; }
+        .right::after { left: -10px; }
         
-        .time-label { color: var(--gold-accent); font-weight: bold; font-size: 1.2rem; }
+        .time-label { color: var(--gold-accent); font-weight: bold; font-size: 1.5rem; display: block; margin-bottom: 5px; }
+        .activity-label { font-size: 1.3rem; margin:0; font-weight: 600; color: var(--text-dark); }
         
-        /* RSVP Form */
         .rsvp-option {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 10px 0; border-bottom: 1px solid rgba(197, 160, 89, 0.3); width: 100%;
+            padding: 12px 0; border-bottom: 1px solid rgba(197, 160, 89, 0.3); width: 100%;
         }
     </style>
 </head>
@@ -120,117 +117,119 @@
 
 <div class="scroll-container">
     
-    <!-- 1. HERO (Pantalla Completa) -->
+    <!-- 1. HERO (Cuerpo entero) -->
     <section class="full-screen" style="
         background-image: linear-gradient(rgba(228, 124, 148, 0.4), rgba(92, 42, 53, 0.8)), url('img/QB5A9106.jpg');
         background-size: cover; background-position: center; color: white;
     ">
         <div class="anim-fade" style="text-align: center;">
-            <p style="font-family: var(--font-cursive); font-size: 1.8rem; margin-bottom: 10px;">Mis XV Años</p>
+            <p style="font-family: var(--font-cursive); font-size: 2rem; margin-bottom: 10px;">Mis XV Años</p>
             <h1 class="cursive-title" style="text-shadow: 2px 4px 10px rgba(0,0,0,0.5);">Fátima Natalia</h1>
-            <p style="font-size: 1.2rem; letter-spacing: 2px; margin-top: 20px;">19 • 09 • 2026</p>
+            <p style="font-size: 1.4rem; letter-spacing: 3px; margin-top: 20px; font-weight: 600;">19 • 09 • 2026</p>
         </div>
     </section>
 
-    <!-- 2. PADRES Y PADRINOS (Pantalla Dividida) -->
+    <!-- 2. PADRES Y PADRINOS (Sentada con pastel) -->
     <section class="split-screen">
         <div class="img-half" style="background-image: url('img/QB5A9177.jpg');"></div>
         <div class="text-half anim-up">
             <h2 class="cursive-subtitle">Mis Padres</h2>
-            <p>Héctor Alfredo Gil Peña<br>Ariadna Alvarado Nolasco</p>
+            <p style="font-size: 1.3rem;">Héctor Alfredo Gil Peña<br>Ariadna Alvarado Nolasco</p>
             
-            <div style="margin: 15px 0;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--gold-accent)"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            <div style="margin: 20px 0;">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="var(--gold-accent)"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
             </div>
             
             <h2 class="cursive-subtitle">Mis Padrinos</h2>
-            <p>Raúl Reyes Padron<br>Verónica Tania Alvarado Nolasco</p>
+            <p style="font-size: 1.3rem;">Raúl Reyes Padron<br>Verónica Tania Alvarado Nolasco</p>
         </div>
     </section>
 
-    <!-- 3. UBICACIÓN Y FECHA (Pantalla Dividida o Diseño Tarjeta) -->
+    <!-- 3. UBICACIÓN (Bloques de alto impacto) -->
     <section class="split-screen">
         <div class="text-half anim-up" style="height: 45vh; background-color: var(--bg-pink); color: white;">
-            <h2 class="cursive-subtitle" style="color: white; font-size: 4rem;">Recepción</h2>
-            <p style="font-size: 1.5rem; letter-spacing: 1px;">Sábado 19 de Septiembre</p>
-            <p style="font-size: 1.8rem; font-weight: bold; margin-top: 10px;">2:00 P.M.</p>
+            <h2 class="cursive-subtitle" style="color: white; font-size: 4.5rem;">Recepción</h2>
+            <p style="font-size: 1.6rem; letter-spacing: 1px;">Sábado 19 de Septiembre</p>
+            <p style="font-size: 2.2rem; font-weight: bold; margin-top: 15px;">2:00 P.M.</p>
         </div>
         <div class="text-half anim-up" style="height: 55vh;">
-            <div class="elegant-label">Lugar del Evento</div>
-            <h2 style="font-family: var(--font-serif); font-size: 1.8rem; font-weight: normal; margin: 10px 0;">HACIENDA SAN MARCOS</h2>
-            <p style="font-size: 0.95rem; color: #666;">Av. San Mateo Nopala #124 Col. Santiago Occipaco Naucalpan, Estado de México</p>
+            <div class="elegant-label" style="font-size: 1.3rem;">Lugar del Evento</div>
+            <h2 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: normal; margin: 15px 0;">HACIENDA SAN MARCOS</h2>
+            <p style="font-size: 1.1rem; color: #666; max-width: 80%;">Av. San Mateo Nopala #124 Col. Santiago Occipaco Naucalpan, Estado de México</p>
             <a href="https://maps.app.goo.gl/nKpehFAfJxwtw5LdA" target="_blank" class="btn-gold">Abrir en Maps 📍</a>
         </div>
     </section>
 
-    <!-- 4. DRESS CODE (Pantalla Completa Limpia) -->
+    <!-- 4. DRESS CODE (Maximizado) -->
     <section class="full-screen" style="background-color: white;">
-        <div class="anim-up" style="text-align: center;">
-            <div class="elegant-label">Dress Code</div>
+        <div class="anim-up" style="text-align: center; width: 100%;">
+            <div class="elegant-label" style="font-size: 1.5rem; letter-spacing: 6px;">Dress Code</div>
             
-            <!-- SVG Elegante Vestimenta -->
-            <svg width="120" height="120" viewBox="0 0 100 100" style="margin: 20px 0;">
+            <!-- SVG Elegante Vestimenta Incrementado -->
+            <svg width="180" height="180" viewBox="0 0 100 100" style="margin: 25px auto; display: block;">
                 <!-- Silueta Vestido -->
-                <path d="M 30,30 Q 35,40 40,50 L 20,90 L 50,90 L 50,50 Q 50,40 30,30 Z" fill="none" stroke="var(--text-dark)" stroke-width="2"/>
+                <path d="M 30,30 Q 35,40 40,50 L 20,90 L 50,90 L 50,50 Q 50,40 30,30 Z" fill="none" stroke="var(--text-dark)" stroke-width="2.5"/>
                 <!-- Silueta Traje -->
-                <path d="M 60,30 L 80,30 L 85,60 L 75,90 L 65,90 L 70,60 L 60,90 L 50,90 L 55,60 L 60,30 Z" fill="none" stroke="var(--text-dark)" stroke-width="2"/>
-                <circle cx="40" cy="20" r="5" fill="none" stroke="var(--gold-accent)" stroke-width="2"/>
-                <circle cx="70" cy="20" r="5" fill="none" stroke="var(--gold-accent)" stroke-width="2"/>
+                <path d="M 60,30 L 80,30 L 85,60 L 75,90 L 65,90 L 70,60 L 60,90 L 50,90 L 55,60 L 60,30 Z" fill="none" stroke="var(--text-dark)" stroke-width="2.5"/>
+                <circle cx="40" cy="18" r="6" fill="none" stroke="var(--gold-accent)" stroke-width="2.5"/>
+                <circle cx="70" cy="18" r="6" fill="none" stroke="var(--gold-accent)" stroke-width="2.5"/>
             </svg>
 
-            <h2 class="cursive-subtitle" style="font-size: 3.5rem;">Formal</h2>
-            <p style="font-style: italic; color: #777; margin-top: 15px;">*El color rosa está estrictamente reservado para la Quinceañera.</p>
+            <h2 class="cursive-subtitle" style="font-size: 5rem; margin: 20px 0;">Formal</h2>
+            <p style="font-style: italic; color: #777; margin-top: 20px; font-size: 1.2rem; max-width: 85%; margin-left: auto; margin-right: auto;">
+                *El color rosa está estrictamente reservado para la Quinceañera.
+            </p>
         </div>
     </section>
 
-    <!-- 5. ITINERARIO -->
+    <!-- 5. ITINERARIO (Maximizado) -->
     <section class="full-screen" style="background-color: var(--bg-light);">
         <div class="anim-up" style="width: 100%; text-align: center;">
-            <h2 class="cursive-subtitle" style="color: var(--gold-accent);">Itinerario</h2>
+            <h2 class="cursive-subtitle" style="color: var(--gold-accent); font-size: 4.5rem; margin-bottom: 30px;">Itinerario</h2>
             
             <div class="timeline">
                 <div class="timeline-item left">
                     <span class="time-label">2:00 PM</span>
-                    <p style="font-size: 1rem; margin:0;">Ceremonia</p>
+                    <p class="activity-label">Ceremonia</p>
                 </div>
                 <div class="timeline-item right">
                     <span class="time-label">3:00 PM</span>
-                    <p style="font-size: 1rem; margin:0;">Recepción</p>
+                    <p class="activity-label">Recepción</p>
                 </div>
                 <div class="timeline-item left">
                     <span class="time-label">4:30 PM</span>
-                    <p style="font-size: 1rem; margin:0;">Cena</p>
+                    <p class="activity-label">Cena</p>
                 </div>
                 <div class="timeline-item right">
                     <span class="time-label">6:00 PM</span>
-                    <p style="font-size: 1rem; margin:0;">Baile</p>
+                    <p class="activity-label">Baile</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. RSVP (Pantalla Dividida) -->
+    <!-- 6. RSVP (Recostada en el suelo) -->
     <section class="split-screen">
-        <div class="img-half" style="background-image: url('img/QB5A9124.jpg');"></div>
+        <div class="img-half" style="background-image: url('img/QB5A9220.jpg');"></div>
         <div class="text-half anim-up">
-            <h2 class="cursive-subtitle" style="font-size: 3rem;">Confirmación</h2>
-            <p>Familia <strong id="fam-name" style="color: var(--gold-accent);">Invitado</strong></p>
-            <p style="font-size: 0.9rem;">Pases reservados: <strong id="pass-count">0</strong></p>
+            <h2 class="cursive-subtitle" style="font-size: 3.5rem;">Confirmación</h2>
+            <p style="font-size: 1.2rem;">Familia <strong id="fam-name" style="color: var(--gold-accent); font-size: 1.4rem;">Invitado</strong></p>
+            <p style="font-size: 1rem;">Pases reservados: <strong id="pass-count">0</strong></p>
             
-            <div id="rsvp-container" style="width: 100%; max-width: 300px; margin-top: 15px;">
+            <div id="rsvp-container" style="width: 100%; max-width: 320px; margin-top: 20px;">
                 <!-- Inyección JS -->
             </div>
         </div>
     </section>
 
-    <!-- 7. CIERRE (Scroll Reveal Full Screen) -->
+    <!-- 7. CIERRE (Reuso de la mejor foto focalizada) -->
     <section class="full-screen" style="
-        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(92, 42, 53, 0.9)), url('img/QB5A9220.jpg');
-        background-size: cover; background-position: center; color: white; justify-content: flex-end; padding-bottom: 60px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(92, 42, 53, 0.95)), url('img/QB5A9106.jpg');
+        background-size: cover; background-position: center 20%; color: white; justify-content: flex-end; padding-bottom: 80px;
     ">
         <div class="anim-fade" style="text-align: center;">
-            <h2 class="cursive-subtitle" style="color: white; font-size: 3rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.5);">¡Gracias por acompañarme!</h2>
-            <p style="font-style: italic;">Nos vemos pronto.</p>
+            <h2 class="cursive-subtitle" style="color: white; font-size: 4rem; text-shadow: 2px 2px 10px rgba(0,0,0,0.8);">¡Gracias por acompañarme!</h2>
+            <p style="font-style: italic; font-size: 1.4rem; letter-spacing: 1px;">Nos vemos pronto.</p>
         </div>
     </section>
 
@@ -250,11 +249,11 @@
         let labelText = i === 0 ? "No asistiremos (0)" : `Confirmar ${i} pase${i > 1 ? 's' : ''}`;
         rsvpContainer.innerHTML += `
             <div class="rsvp-option">
-                <label style="display: flex; align-items: center; font-size: 0.9rem;">
-                    <input type="radio" name="rsvp-radio" value="${i}" style="transform: scale(1.2); margin-right: 10px; accent-color: var(--gold-accent);">
+                <label style="display: flex; align-items: center; font-size: 1rem; font-weight: 600;">
+                    <input type="radio" name="rsvp-radio" value="${i}" style="transform: scale(1.4); margin-right: 12px; accent-color: var(--gold-accent);">
                     ${labelText}
                 </label>
-                <button class="btn-gold" style="padding: 6px 15px; font-size: 0.8rem; margin-top: 0;" onclick="enviarRSVP(${i})">Enviar</button>
+                <button class="btn-gold" style="padding: 8px 18px; font-size: 0.9rem; margin-top: 0; border-radius: 20px;" onclick="enviarRSVP(${i})">Enviar</button>
             </div>
         `;
     }
@@ -272,9 +271,9 @@
             body: JSON.stringify({ familia: family, pases: cantidad })
         }).then(() => {
             document.getElementById('rsvp-container').innerHTML = `
-                <div style="text-align: center; padding: 20px 0;">
-                    <h3 style="color: var(--gold-accent); font-size: 2rem; font-family: var(--font-cursive);">¡Registro Exitoso!</h3>
-                    <p style="font-weight: 600;">Los datos han sido guardados.</p>
+                <div style="text-align: center; padding: 25px 0;">
+                    <h3 style="color: var(--gold-accent); font-size: 2.5rem; font-family: var(--font-cursive); margin-bottom: 10px;">¡Registro Exitoso!</h3>
+                    <p style="font-weight: 600; font-size: 1.2rem;">Los datos han sido guardados.</p>
                 </div>
             `;
         }).catch(error => {
@@ -290,7 +289,6 @@
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
             } else {
-                // Removemos la clase al salir para que la animación se repita al volver a hacer scroll
                 entry.target.classList.remove('visible');
             }
         });
