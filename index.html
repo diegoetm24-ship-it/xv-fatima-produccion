@@ -59,7 +59,7 @@
         .text-half {
             height: 60vh; width: 100%;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
-            padding: 20px; box-sizing: border-box; background: var(--bg-light);
+            padding: 20px; box-sizing: border-box;
             text-align: center; position: relative;
         }
 
@@ -141,27 +141,22 @@
         }
         .music-btn.playing { animation: none; background-color: var(--text-dark); }
 
-        /* Clases para los pensamientos con imágenes JPG */
-        .thought-section-1 {
-            background-image: url('img/peony-1.jpg');
+        /* Filtros universales de textura floral para los espacios en blanco */
+        .floral-bg-1 {
+            background-image: linear-gradient(rgba(250, 250, 250, 0.85), rgba(250, 250, 250, 0.85)), url('img/peony-1.jpg');
             background-size: cover; background-position: center;
-            position: relative;
         }
-        .thought-section-2 {
-            background-image: url('img/peony-2.jpg');
+        .floral-bg-2 {
+            background-image: linear-gradient(rgba(250, 250, 250, 0.85), rgba(250, 250, 250, 0.85)), url('img/peony-2.jpg');
             background-size: cover; background-position: center;
-            position: relative;
         }
-        .thought-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(250, 250, 250, 0.5); 
-            z-index: 1;
-        }
+
+        /* Tarjetas de Pensamiento */
         .thought-card {
-            background: rgba(255, 255, 255, 0.93);
+            background: rgba(255, 255, 255, 0.95);
             padding: 40px 30px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             max-width: 90%;
             position: relative;
             z-index: 2;
@@ -175,7 +170,6 @@
             text-align: center;
             font-style: italic;
         }
-
     </style>
 </head>
 <body>
@@ -199,9 +193,8 @@
         </div>
     </section>
 
-    <!-- PENSAMIENTO 1 -->
-    <section class="full-screen thought-section-1">
-        <div class="thought-overlay"></div>
+    <!-- PENSAMIENTO 1 (Textura Floral 1) -->
+    <section class="full-screen floral-bg-1">
         <div class="anim-up thought-card">
             <p class="thought-text">
                 "Celebro mis quince años, un momento lleno de alegría y sueños por cumplir. Estoy lista para enfrentar el futuro con esperanza y amor en mi corazón."
@@ -209,10 +202,10 @@
         </div>
     </section>
 
-    <!-- 2. PADRES Y PADRINOS -->
+    <!-- 2. PADRES Y PADRINOS (Textura Floral 2 en espacio en blanco) -->
     <section class="split-screen">
         <div class="img-half" style="background-image: url('img/QB5A9177.jpg');"></div>
-        <div class="text-half anim-up">
+        <div class="text-half anim-up floral-bg-2">
             <h2 class="cursive-subtitle">Mis Padres</h2>
             <p style="font-size: 1.3rem;">Héctor Alfredo Gil Peña<br>Ariadna Alvarado Nolasco</p>
             <div style="margin: 20px 0; display: flex; justify-content: center; width: 100%;">
@@ -223,9 +216,8 @@
         </div>
     </section>
 
-    <!-- PENSAMIENTO 2 -->
-    <section class="full-screen thought-section-2">
-        <div class="thought-overlay"></div>
+    <!-- PENSAMIENTO 2 (Textura Floral 1) -->
+    <section class="full-screen floral-bg-1">
         <div class="anim-up thought-card">
             <h2 class="cursive-subtitle" style="font-size: 2.5rem; margin-bottom: 15px;">Familia y Amigos</h2>
             <p class="thought-text">
@@ -248,8 +240,8 @@
         </div>
     </section>
 
-    <!-- 4. DRESS CODE -->
-    <section class="full-screen" style="background-color: white;">
+    <!-- 4. DRESS CODE (Textura Floral 2) -->
+    <section class="full-screen floral-bg-2">
         <div class="anim-up" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; text-align: center;">
             <div class="elegant-label" style="font-size: 1.5rem; letter-spacing: 6px;">Dress Code</div>
             
@@ -262,15 +254,15 @@
                 </g>
             </svg>
             
-            <h2 class="cursive-subtitle" style="font-size: 5.5rem; margin: 0; line-height: 1; transform: translateX(-20px);">Formal (👢)</h2>
+            <h2 class="cursive-subtitle" style="font-size: 5.5rem; margin: 0; line-height: 1; transform: translateX(-20px);">Formal</h2>
             <p style="font-size: 1.6rem; font-weight: 600; color: var(--gold-accent); margin-top: 10px; letter-spacing: 2px; text-transform: uppercase;">
-                
+                (Con Bota 👢)
             </p>
         </div>
     </section>
 
-    <!-- 5. ITINERARIO -->
-    <section class="auto-screen" style="background-color: var(--bg-light);">
+    <!-- 5. ITINERARIO (Textura Floral 1) -->
+    <section class="auto-screen floral-bg-1">
         <div class="anim-up" style="width: 100%; text-align: center;">
             <h2 class="cursive-subtitle" style="color: var(--gold-accent); font-size: 4rem; margin-bottom: 10px;">Itinerario</h2>
             <p style="font-family: var(--font-serif); font-size: 1.2rem; letter-spacing: 2px;">Una noche inolvidable</p>
@@ -328,10 +320,10 @@
         </div>
     </section>
 
-    <!-- 6. RSVP -->
+    <!-- 6. RSVP (Textura Floral 2 en espacio en blanco) -->
     <section class="split-screen">
         <div class="img-half" style="background-image: url('img/foto-rsvp.jpg'); background-position: center;"></div>
-        <div class="text-half anim-up">
+        <div class="text-half anim-up floral-bg-2">
             <h2 class="cursive-subtitle" style="font-size: 3.5rem;">Confirmación</h2>
             <p style="font-size: 1.2rem;">Familia <strong id="fam-name" style="color: var(--gold-accent); font-size: 1.4rem;">Invitado</strong></p>
             <p style="font-size: 1rem;">Pases reservados: <strong id="pass-count">0</strong></p>
@@ -353,13 +345,11 @@
 </div>
 
 <script>
-    // Lógica del Reproductor de Audio con Bypass de Interacción
     const musicBtn = document.getElementById('musicBtn');
     const bgMusic = document.getElementById('bgMusic');
     const mainContainer = document.getElementById('mainContainer');
     let isPlaying = false;
 
-    // Función para arrancar la música forzadamente
     function startMusic() {
         if (!isPlaying) {
             bgMusic.play().then(() => {
@@ -372,13 +362,11 @@
         }
     }
 
-    // El Bypass: Detectamos el primer tap/scroll en la pantalla para engañar al navegador
     const interactionEvents = ['click', 'touchstart', 'scroll'];
     interactionEvents.forEach(evt => {
         document.body.addEventListener(evt, startMusic, { once: true });
     });
 
-    // Control manual por si el usuario la quiere apagar
     musicBtn.addEventListener('click', (e) => {
         e.stopPropagation(); 
         if (isPlaying) {
