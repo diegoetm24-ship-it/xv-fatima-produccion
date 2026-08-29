@@ -140,6 +140,42 @@
             100% { transform: scale(1); box-shadow: 0 4px 15px rgba(197, 160, 89, 0.5); }
         }
         .music-btn.playing { animation: none; background-color: var(--text-dark); }
+
+        /* Clases para los pensamientos con imágenes JPG */
+        .thought-section-1 {
+            background-image: url('img/peony-1.jpg');
+            background-size: cover; background-position: center;
+            position: relative;
+        }
+        .thought-section-2 {
+            background-image: url('img/peony-2.jpg');
+            background-size: cover; background-position: center;
+            position: relative;
+        }
+        .thought-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(250, 250, 250, 0.5); 
+            z-index: 1;
+        }
+        .thought-card {
+            background: rgba(255, 255, 255, 0.93);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 90%;
+            position: relative;
+            z-index: 2;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+        }
+        .thought-text {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            text-align: center;
+            font-style: italic;
+        }
+
     </style>
 </head>
 <body>
@@ -163,6 +199,16 @@
         </div>
     </section>
 
+    <!-- PENSAMIENTO 1 -->
+    <section class="full-screen thought-section-1">
+        <div class="thought-overlay"></div>
+        <div class="anim-up thought-card">
+            <p class="thought-text">
+                "Celebro mis quince años, un momento lleno de alegría y sueños por cumplir. Estoy lista para enfrentar el futuro con esperanza y amor en mi corazón."
+            </p>
+        </div>
+    </section>
+
     <!-- 2. PADRES Y PADRINOS -->
     <section class="split-screen">
         <div class="img-half" style="background-image: url('img/QB5A9177.jpg');"></div>
@@ -174,6 +220,17 @@
             </div>
             <h2 class="cursive-subtitle">Mis Padrinos</h2>
             <p style="font-size: 1.3rem;">Raúl Reyes Padron<br>Verónica Tania Alvarado Nolasco</p>
+        </div>
+    </section>
+
+    <!-- PENSAMIENTO 2 -->
+    <section class="full-screen thought-section-2">
+        <div class="thought-overlay"></div>
+        <div class="anim-up thought-card">
+            <h2 class="cursive-subtitle" style="font-size: 2.5rem; margin-bottom: 15px;">Familia y Amigos</h2>
+            <p class="thought-text">
+                "Esta celebración es un acontecimiento único en mi vida y estoy muy emocionada no solo porque cumpliré 15 años, sino también porque todas las personas que tanto quiero estarán a mi lado."
+            </p>
         </div>
     </section>
 
@@ -205,9 +262,9 @@
                 </g>
             </svg>
             
-            <h2 class="cursive-subtitle" style="font-size: 5.5rem; margin: 0; line-height: 1; transform: translateX(-20px);">Formal</h2>
+            <h2 class="cursive-subtitle" style="font-size: 5.5rem; margin: 0; line-height: 1; transform: translateX(-20px);">Formal (👢)</h2>
             <p style="font-size: 1.6rem; font-weight: 600; color: var(--gold-accent); margin-top: 10px; letter-spacing: 2px; text-transform: uppercase;">
-                (Con Bota 👢)
+                
             </p>
         </div>
     </section>
