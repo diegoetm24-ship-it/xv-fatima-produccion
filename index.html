@@ -88,7 +88,7 @@
             border-radius: 35px; font-weight: 600; letter-spacing: 1px; border: none; cursor: pointer;
             box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4); font-family: var(--font-serif);
         }
-        .btn-gold:disabled { background-color: #ccc; box-shadow: none; }
+        .btn-gold:disabled { background-color: #ccc; box-shadow: none; cursor: not-allowed; }
 
         .countdown-timer {
             font-size: 1.6rem; font-weight: 600; letter-spacing: 4px;
@@ -119,10 +119,15 @@
         .activity-title { font-size: 1.2rem; margin:0; font-weight: 600; color: var(--text-dark); }
         .activity-desc { font-size: 0.9rem; margin-top: 5px; color: #666; font-style: italic; line-height: 1.3; }
 
-        .rsvp-option {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 12px 0; border-bottom: 1px solid rgba(197, 160, 89, 0.3); width: 100%;
+        /* Estilos Libro de Visitas */
+        .guestbook-input {
+            width: 100%; padding: 15px; margin: 10px 0;
+            border: 1px solid rgba(197, 160, 89, 0.4); border-radius: 8px;
+            font-family: var(--font-serif); font-size: 1rem; box-sizing: border-box;
+            background-color: rgba(255,255,255,0.9); color: var(--text-dark);
         }
+        .guestbook-input:focus { outline: none; border-color: var(--gold-accent); box-shadow: 0 0 8px rgba(197, 160, 89, 0.3); }
+        textarea.guestbook-input { resize: vertical; min-height: 100px; }
 
         /* Botón de Música Flotante */
         .music-btn {
@@ -157,7 +162,7 @@
             padding: 40px 30px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            max-width: 90%;
+            max-width: 90%; width: 100%;
             position: relative;
             z-index: 2;
             border: 1px solid rgba(197, 160, 89, 0.3);
@@ -202,7 +207,7 @@
         </div>
     </section>
 
-    <!-- 2. PADRES Y PADRINOS (Textura Floral 2 en espacio en blanco) -->
+    <!-- 2. PADRES Y PADRINOS (Textura Floral 2) -->
     <section class="split-screen">
         <div class="img-half" style="background-image: url('img/QB5A9177.jpg');"></div>
         <div class="text-half anim-up floral-bg-2">
@@ -254,12 +259,12 @@
                 </g>
             </svg>
             
-            <h2 class="cursive-subtitle" style="font-size: 5.5rem; margin: 0; line-height: 1; transform: translateX(-20px);">Formal</h2>
+            <h2 class="cursive-subtitle" style="font-size: 5.5rem; margin: 0; line-height: 1; transform: translateX(-20px);">Formal (👢)</h2>
             <p style="font-size: 1.6rem; font-weight: 600; color: var(--gold-accent); margin-top: 10px; letter-spacing: 2px; text-transform: uppercase;">
-                (Con Bota 👢)
+                
             </p>
         </div>
-    </section>
+    </section>5
 
     <!-- 5. ITINERARIO (Textura Floral 1) -->
     <section class="auto-screen floral-bg-1">
@@ -320,18 +325,35 @@
         </div>
     </section>
 
-    <!-- 6. RSVP (Textura Floral 2 en espacio en blanco) -->
-    <section class="split-screen">
-        <div class="img-half" style="background-image: url('img/foto-rsvp.jpg'); background-position: center;"></div>
-        <div class="text-half anim-up floral-bg-2">
-            <h2 class="cursive-subtitle" style="font-size: 3.5rem;">Confirmación</h2>
-            <p style="font-size: 1.2rem;">Familia <strong id="fam-name" style="color: var(--gold-accent); font-size: 1.4rem;">Invitado</strong></p>
-            <p style="font-size: 1rem;">Pases reservados: <strong id="pass-count">0</strong></p>
-            <div id="rsvp-container" style="width: 100%; max-width: 320px; margin-top: 20px;"></div>
+    <!-- 6. GUESTBOOK / PENSAMIENTOS (Textura Floral 2) -->
+    <section class="auto-screen floral-bg-2">
+        <div class="anim-up thought-card" style="width: 100%; max-width: 500px; text-align: center;">
+            <h2 class="cursive-subtitle" style="font-size: 3.5rem; margin-bottom: 10px;">Libro de Visitas</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 20px;">Déjale un mensaje especial a Fátima.</p>
+            
+            <input type="text" id="gb-name" class="guestbook-input" placeholder="Tu nombre o familia" required>
+            <textarea id="gb-message" class="guestbook-input" placeholder="Escribe tus mejores deseos aquí..." required></textarea>
+            
+            <button id="gb-btn" class="btn-gold" style="width: 100%; margin-top: 10px; border-radius: 8px;" onclick="guardarMensaje()">Dejar mensaje 💌</button>
+            <p id="gb-status" style="display:none; color: var(--gold-accent); font-weight: bold; margin-top: 15px; font-size: 1.1rem;">¡Mensaje enviado con éxito!</p>
         </div>
     </section>
 
-    <!-- 7. CIERRE FOCALIZADO -->
+    <!-- 7. RSVP CON WHATSAPP (Textura Floral 1) -->
+    <section class="split-screen">
+        <div class="img-half" style="background-image: url('img/foto-rsvp.jpg'); background-position: center;"></div>
+        <div class="text-half anim-up floral-bg-1">
+            <h2 class="cursive-subtitle" style="font-size: 3.5rem;">Confirmación</h2>
+            <p style="font-size: 1.2rem;">Familia <strong id="fam-name" style="color: var(--gold-accent); font-size: 1.4rem;">Invitado</strong></p>
+            <p style="font-size: 1rem;">Pases reservados: <strong id="pass-count">0</strong></p>
+            
+            <div style="margin-top: 25px;">
+                <button class="btn-gold" onclick="confirmarWhatsApp()">Confirmar por WhatsApp 📱</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. CIERRE FOCALIZADO -->
     <section class="full-screen" style="
         background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(92, 42, 53, 0.95)), url('img/QB5A9106.jpg');
         background-size: cover; background-position: 42% 25%; color: white; justify-content: flex-end; padding-bottom: 80px;
@@ -347,7 +369,6 @@
 <script>
     const musicBtn = document.getElementById('musicBtn');
     const bgMusic = document.getElementById('bgMusic');
-    const mainContainer = document.getElementById('mainContainer');
     let isPlaying = false;
 
     function startMusic() {
@@ -388,40 +409,57 @@
     document.getElementById('fam-name').innerText = family;
     document.getElementById('pass-count').innerText = passes;
 
-    const rsvpContainer = document.getElementById('rsvp-container');
-    for (let i = passes; i >= 0; i--) {
-        let labelText = i === 0 ? "No asistiremos (0)" : `Confirmar ${i} pase${i > 1 ? 's' : ''}`;
-        rsvpContainer.innerHTML += `
-            <div class="rsvp-option">
-                <label style="display: flex; align-items: center; font-size: 1rem; font-weight: 600;">
-                    <input type="radio" name="rsvp-radio" value="${i}" style="transform: scale(1.4); margin-right: 12px; accent-color: var(--gold-accent);">
-                    ${labelText}
-                </label>
-                <button class="btn-gold" style="padding: 8px 18px; font-size: 0.9rem; margin-top: 0; border-radius: 20px;" onclick="enviarRSVP(${i})">Enviar</button>
-            </div>
-        `;
+    function confirmarWhatsApp() {
+        const numeroTelefono = "525500000000"; 
+        const mensaje = `Hola, confirmo la asistencia de la Familia ${family} (${passes} pases) a los XV años de Fátima.`;
+        const url = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
+        window.open(url, '_blank');
     }
 
-    const API_URL = 'https://script.google.com/macros/s/AKfycbwlqJuvvling3wh2Sa04E_YYjK0fHaea0d8STFS1Ia2jdCtRkHvWIBhvLCRnmUWALKY/exec';
+    // --- NUEVA LÓGICA DE API DE CORREOS (FormSubmit) ---
+    function guardarMensaje() {
+        const name = document.getElementById('gb-name').value;
+        const msg = document.getElementById('gb-message').value;
+        const btn = document.getElementById('gb-btn');
+        
+        if(!name || !msg) {
+            alert("Por favor llena ambos campos para dejar tu mensaje.");
+            return;
+        }
 
-    function enviarRSVP(cantidad) {
-        const btns = document.querySelectorAll('.btn-gold');
-        btns.forEach(btn => { btn.innerText = "..."; btn.disabled = true; });
+        // Bloquear botón para evitar doble clic
+        btn.innerText = "Enviando... ⏳";
+        btn.disabled = true;
 
-        fetch(API_URL, {
-            method: 'POST', mode: 'no-cors',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ familia: family, pases: cantidad })
-        }).then(() => {
-            document.getElementById('rsvp-container').innerHTML = `
-                <div style="text-align: center; padding: 25px 0;">
-                    <h3 style="color: var(--gold-accent); font-size: 2.5rem; font-family: var(--font-cursive); margin-bottom: 10px;">¡Registro Exitoso!</h3>
-                    <p style="font-weight: 600; font-size: 1.2rem;">Los datos han sido guardados.</p>
-                </div>
-            `;
-        }).catch(error => {
-            alert('Error de red. Inténtalo de nuevo.');
-            btns.forEach(btn => { btn.innerText = "Enviar"; btn.disabled = false; });
+        // INYECCIÓN DE CORREO: Cambiar correo aquí para el cliente final
+        fetch("https://formsubmit.co/ajax/diegoetm24@gmail.com", {
+            method: "POST",
+            headers: { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                _subject: "Nuevo mensaje en Libro de Visitas XV Años 💌",
+                Familia_o_Invitado: name,
+                Mensaje: msg
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('gb-status').style.display = 'block';
+            document.getElementById('gb-name').value = '';
+            document.getElementById('gb-message').value = '';
+            btn.innerText = "Dejar mensaje 💌";
+            btn.disabled = false;
+            
+            setTimeout(() => { 
+                document.getElementById('gb-status').style.display = 'none'; 
+            }, 4000);
+        })
+        .catch(error => {
+            alert("Hubo un problema de conexión al enviar el mensaje. Intenta de nuevo.");
+            btn.innerText = "Dejar mensaje 💌";
+            btn.disabled = false;
         });
     }
 
