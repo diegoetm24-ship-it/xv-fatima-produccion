@@ -259,9 +259,9 @@
                 </g>
             </svg>
             
-            <h2 class="cursive-subtitle" style="font-size: 5.5rem; margin: 0; line-height: 1; transform: translateX(-20px);">Formal</h2>
+            <h2 class="cursive-subtitle" style="font-size: 5.5rem; margin: 0; line-height: 1; transform: translateX(-20px);">Formal(👢)</h2>
             <p style="font-size: 1.6rem; font-weight: 600; color: var(--gold-accent); margin-top: 10px; letter-spacing: 2px; text-transform: uppercase;">
-                (Con Bota 👢)
+                
             </p>
         </div>
     </section>
@@ -398,12 +398,13 @@
         isPlaying = !isPlaying;
     });
 
+    // Captura de variables de URL para el WhatsApp
     const urlParams = new URLSearchParams(window.location.search);
     const family = urlParams.get('f') || '';
     const passes = parseInt(urlParams.get('p')) || 1;
 
     function confirmarWhatsApp() {
-        const numeroTelefono = "525500000000"; 
+        const numeroTelefono = "5215530350554"; // NÚMERO FINAL INYECTADO
         const nombreFamilia = family ? `Familia ${family}` : "mi familia";
         const mensaje = `Hola, confirmo la asistencia de ${nombreFamilia} (${passes} pases) a los XV años de Fátima.`;
         const url = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
