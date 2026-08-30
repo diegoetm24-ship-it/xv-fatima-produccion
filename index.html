@@ -198,7 +198,7 @@
         </div>
     </section>
 
-    <!-- PENSAMIENTO 1 -->
+    <!-- PENSAMIENTO 1 (Textura Floral 1) -->
     <section class="full-screen floral-bg-1">
         <div class="anim-up thought-card">
             <p class="thought-text">
@@ -207,7 +207,7 @@
         </div>
     </section>
 
-    <!-- 2. PADRES Y PADRINOS -->
+    <!-- 2. PADRES Y PADRINOS (Textura Floral 2) -->
     <section class="split-screen">
         <div class="img-half" style="background-image: url('img/QB5A9177.jpg');"></div>
         <div class="text-half anim-up floral-bg-2">
@@ -221,7 +221,7 @@
         </div>
     </section>
 
-    <!-- PENSAMIENTO 2 -->
+    <!-- PENSAMIENTO 2 (Textura Floral 1) -->
     <section class="full-screen floral-bg-1">
         <div class="anim-up thought-card">
             <h2 class="cursive-subtitle" style="font-size: 2.5rem; margin-bottom: 15px;">Familia y Amigos</h2>
@@ -245,7 +245,7 @@
         </div>
     </section>
 
-    <!-- 4. DRESS CODE -->
+    <!-- 4. DRESS CODE (Textura Floral 2) -->
     <section class="full-screen floral-bg-2">
         <div class="anim-up" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; text-align: center;">
             <div class="elegant-label" style="font-size: 1.5rem; letter-spacing: 6px;">Dress Code</div>
@@ -259,13 +259,14 @@
                 </g>
             </svg>
             
-            <h2 class="cursive-subtitle" style="font-size: 5.5rem; margin: 0; line-height: 1; transform: translateX(-10px); display: flex; align-items: center; justify-content: center; gap: 15px;">
-                Formal <span style="font-family: sans-serif; font-size: 3.5rem;">👢</span>
-            </h2>
+            <h2 class="cursive-subtitle" style="font-size: 5.5rem; margin: 0; line-height: 1; transform: translateX(-20px);">Formal</h2>
+            <p style="font-size: 1.6rem; font-weight: 600; color: var(--gold-accent); margin-top: 10px; letter-spacing: 2px; text-transform: uppercase;">
+                (Con Bota 👢)
+            </p>
         </div>
     </section>
 
-    <!-- 5. ITINERARIO -->
+    <!-- 5. ITINERARIO (Textura Floral 1) -->
     <section class="auto-screen floral-bg-1">
         <div class="anim-up" style="width: 100%; text-align: center;">
             <h2 class="cursive-subtitle" style="color: var(--gold-accent); font-size: 4rem; margin-bottom: 10px;">Itinerario</h2>
@@ -324,11 +325,10 @@
         </div>
     </section>
 
-    <!-- 6. GUESTBOOK / PENSAMIENTOS -->
+    <!-- 6. GUESTBOOK / PENSAMIENTOS (Textura Floral 2) -->
     <section class="auto-screen floral-bg-2">
         <div class="anim-up thought-card" style="width: 100%; max-width: 500px; text-align: center;">
-            <h2 class="cursive-subtitle" style="font-size: 3.5rem; margin-bottom: 10px;">Libro de Visitas</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 20px;">Déjale un mensaje especial a Fátima.</p>
+            <h2 class="cursive-subtitle" style="font-size: 3.5rem; margin-bottom: 25px; line-height: 1.1;">Déjale un pensamiento especial a Fátima</h2>
             
             <input type="text" id="gb-name" class="guestbook-input" placeholder="Tu nombre o familia" required>
             <textarea id="gb-message" class="guestbook-input" placeholder="Escribe tus mejores deseos aquí..." required></textarea>
@@ -338,7 +338,7 @@
         </div>
     </section>
 
-    <!-- 7. RSVP CON WHATSAPP -->
+    <!-- 7. RSVP CON WHATSAPP (Textura Floral 1) -->
     <section class="split-screen">
         <div class="img-half" style="background-image: url('img/foto-rsvp.jpg'); background-position: center;"></div>
         <div class="text-half anim-up floral-bg-1">
@@ -398,7 +398,6 @@
         isPlaying = !isPlaying;
     });
 
-    // Captura de variables para armar el string de WhatsApp dinámicamente, aunque no se impriman en pantalla.
     const urlParams = new URLSearchParams(window.location.search);
     const family = urlParams.get('f') || '';
     const passes = parseInt(urlParams.get('p')) || 1;
