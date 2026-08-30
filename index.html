@@ -119,7 +119,7 @@
         .activity-title { font-size: 1.2rem; margin:0; font-weight: 600; color: var(--text-dark); }
         .activity-desc { font-size: 0.9rem; margin-top: 5px; color: #666; font-style: italic; line-height: 1.3; }
 
-        /* Estilos Libro de Visitas */
+        /* Estilos Libro de Visitas y Formularios */
         .guestbook-input {
             width: 100%; padding: 15px; margin: 10px 0;
             border: 1px solid rgba(197, 160, 89, 0.4); border-radius: 8px;
@@ -156,7 +156,7 @@
             background-size: cover; background-position: center;
         }
 
-        /* Tarjetas de Pensamiento */
+        /* Tarjetas de Contenido */
         .thought-card {
             background: rgba(255, 255, 255, 0.95);
             padding: 40px 30px;
@@ -174,6 +174,12 @@
             color: var(--text-dark);
             text-align: center;
             font-style: italic;
+        }
+        
+        .donation-amounts p {
+            margin: 5px 0;
+            font-size: 1.15rem;
+            color: var(--text-dark);
         }
     </style>
 </head>
@@ -198,7 +204,7 @@
         </div>
     </section>
 
-    <!-- PENSAMIENTO 1 -->
+    <!-- 2. PENSAMIENTO 1 (Textura Floral 1) -->
     <section class="full-screen floral-bg-1">
         <div class="anim-up thought-card">
             <p class="thought-text">
@@ -207,7 +213,7 @@
         </div>
     </section>
 
-    <!-- 2. PADRES Y PADRINOS -->
+    <!-- 3. PADRES Y PADRINOS (Textura Floral 2) -->
     <section class="split-screen">
         <div class="img-half" style="background-image: url('img/QB5A9177.jpg');"></div>
         <div class="text-half anim-up floral-bg-2">
@@ -221,7 +227,7 @@
         </div>
     </section>
 
-    <!-- PENSAMIENTO 2 -->
+    <!-- 4. PENSAMIENTO 2 (Textura Floral 1) -->
     <section class="full-screen floral-bg-1">
         <div class="anim-up thought-card">
             <h2 class="cursive-subtitle" style="font-size: 2.5rem; margin-bottom: 15px;">Familia y Amigos</h2>
@@ -231,7 +237,7 @@
         </div>
     </section>
 
-    <!-- 3. UBICACIÓN -->
+    <!-- 5. UBICACIÓN -->
     <section class="full-screen" style="
         background-image: linear-gradient(rgba(228, 124, 148, 0.75), rgba(92, 42, 53, 0.92)), url('img/imagensalon.jpg');
         background-size: cover; background-position: center; color: white; text-align: center;
@@ -245,7 +251,7 @@
         </div>
     </section>
 
-    <!-- 4. DRESS CODE (Emoji blindado) -->
+    <!-- 6. DRESS CODE (Textura Floral 2) -->
     <section class="full-screen floral-bg-2">
         <div class="anim-up" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; text-align: center;">
             <div class="elegant-label" style="font-size: 1.5rem; letter-spacing: 6px;">Dress Code</div>
@@ -265,7 +271,7 @@
         </div>
     </section>
 
-    <!-- 5. ITINERARIO -->
+    <!-- 7. ITINERARIO (Textura Floral 1) -->
     <section class="auto-screen floral-bg-1">
         <div class="anim-up" style="width: 100%; text-align: center;">
             <h2 class="cursive-subtitle" style="color: var(--gold-accent); font-size: 4rem; margin-bottom: 10px;">Itinerario</h2>
@@ -324,11 +330,51 @@
         </div>
     </section>
 
-    <!-- 6. GUESTBOOK / PENSAMIENTOS -->
+    <!-- 8. OBSEQUIOS / MESA DE REGALOS (Textura Floral 2) -->
     <section class="auto-screen floral-bg-2">
         <div class="anim-up thought-card" style="width: 100%; max-width: 500px; text-align: center;">
-            <h2 class="cursive-subtitle" style="font-size: 3.5rem; margin-bottom: 10px;">Libro de Visitas</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 20px;">Déjale un mensaje especial a Fátima.</p>
+            <div class="elegant-label" style="font-size: 1.5rem; letter-spacing: 6px;">Mesa de Regalos</div>
+            <p style="font-family: var(--font-serif); font-size: 1.2rem; line-height: 1.6; margin: 15px 0;">El mejor regalo es tu presencia, pero si deseas tenerme un detalle, te lo agradeceré de corazón.</p>
+
+            <div style="background: rgba(255,255,255,0.8); border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 10px; padding: 20px; margin-top: 20px; text-align: left;">
+                <p style="margin: 5px 0; font-size: 1.1rem;"><strong>Banco:</strong> Scotiabank</p>
+                <p style="margin: 5px 0; font-size: 1.1rem;"><strong>Titular:</strong> Héctor Alfredo gil pena</p>
+                <p style="margin: 5px 0; font-size: 1.1rem;"><strong>Concepto:</strong> Fatima</p>
+
+                <div style="margin-top: 15px;">
+                    <p style="margin: 0; font-size: 1rem; color: #666;">Cuenta</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 10px; border-radius: 5px; border: 1px solid #ddd;">
+                        <span style="font-size: 1.2rem; font-weight: bold; letter-spacing: 1px; color: var(--text-dark);" id="copy-cuenta">25605583344</span>
+                        <button onclick="copiarTexto('copy-cuenta')" style="background: none; border: none; font-size: 1.2rem; cursor: pointer;" title="Copiar al portapapeles">📋</button>
+                    </div>
+                </div>
+
+                <div style="margin-top: 15px;">
+                    <p style="margin: 0; font-size: 1rem; color: #666;">CLABE</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 10px; border-radius: 5px; border: 1px solid #ddd;">
+                        <span style="font-size: 1.2rem; font-weight: bold; letter-spacing: 1px; color: var(--text-dark);" id="copy-clabe">044180256055833444</span>
+                        <button onclick="copiarTexto('copy-clabe')" style="background: none; border: none; font-size: 1.2rem; cursor: pointer;" title="Copiar al portapapeles">📋</button>
+                    </div>
+                </div>
+
+                <!-- Montos sugeridos añadidos -->
+                <div class="donation-amounts" style="margin-top: 20px; text-align: center;">
+                    <p style="margin-bottom: 10px; font-weight: 600; color: #666;">Montos que puedes depositar:</p>
+                    <p>$500</p>
+                    <p>$1000</p>
+                    <p>$1500</p>
+                    <p>$3000</p>
+                    <p>$5000</p>
+                    <p>Otra cantidad</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. GUESTBOOK / PENSAMIENTOS (Textura Floral 1) -->
+    <section class="auto-screen floral-bg-1">
+        <div class="anim-up thought-card" style="width: 100%; max-width: 500px; text-align: center;">
+            <h2 class="cursive-subtitle" style="font-size: 3.5rem; margin-bottom: 25px; line-height: 1.1;">Déjale un pensamiento especial a Fátima</h2>
             
             <input type="text" id="gb-name" class="guestbook-input" placeholder="Tu nombre o familia" required>
             <textarea id="gb-message" class="guestbook-input" placeholder="Escribe tus mejores deseos aquí..." required></textarea>
@@ -338,10 +384,10 @@
         </div>
     </section>
 
-    <!-- 7. RSVP CON WHATSAPP -->
+    <!-- 10. RSVP CON WHATSAPP (Textura Floral 2) -->
     <section class="split-screen">
         <div class="img-half" style="background-image: url('img/foto-rsvp.jpg'); background-position: center;"></div>
-        <div class="text-half anim-up floral-bg-1">
+        <div class="text-half anim-up floral-bg-2">
             <h2 class="cursive-subtitle" style="font-size: 3.5rem;">Confirmación</h2>
             <div style="margin-top: 15px;">
                 <button class="btn-gold" onclick="confirmarWhatsApp()">Confirmar por WhatsApp 📱</button>
@@ -349,7 +395,7 @@
         </div>
     </section>
 
-    <!-- 8. CIERRE FOCALIZADO -->
+    <!-- 11. CIERRE FOCALIZADO -->
     <section class="full-screen" style="
         background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(92, 42, 53, 0.95)), url('img/QB5A9106.jpg');
         background-size: cover; background-position: 42% 25%; color: white; justify-content: flex-end; padding-bottom: 80px;
@@ -363,6 +409,7 @@
 </div>
 
 <script>
+    // Reproductor de Audio
     const musicBtn = document.getElementById('musicBtn');
     const bgMusic = document.getElementById('bgMusic');
     let isPlaying = false;
@@ -398,10 +445,10 @@
         isPlaying = !isPlaying;
     });
 
+    // Lógica de WhatsApp
     const urlParams = new URLSearchParams(window.location.search);
     const family = urlParams.get('f') || '';
 
-    // LA LÓGICA DE WHATSAPP AHORA ESTÁ LIMPIA Y SIN EL PARÁMETRO DE PASES
     function confirmarWhatsApp() {
         const numeroTelefono = "5215530350554"; 
         const nombreFamilia = family ? `Familia ${family}` : "mi familia";
@@ -410,6 +457,7 @@
         window.open(url, '_blank');
     }
 
+    // Lógica de Formulario
     function guardarMensaje() {
         const name = document.getElementById('gb-name').value;
         const msg = document.getElementById('gb-message').value;
@@ -423,7 +471,7 @@
         btn.innerText = "Enviando... ⏳";
         btn.disabled = true;
 
-        fetch("https://formsubmit.co/ajax/fatimanataliagilalvarado1@gmail.com5", {
+        fetch("https://formsubmit.co/ajax/fatimanataliagilalvaradonolasco1@gmail.com", {
             method: "POST",
             headers: { 
                 'Content-Type': 'application/json',
@@ -454,6 +502,18 @@
         });
     }
 
+    // Lógica UX de Copiar Portapapeles
+    function copiarTexto(id) {
+        const texto = document.getElementById(id).innerText;
+        navigator.clipboard.writeText(texto).then(() => {
+            const btn = document.querySelector(`button[onclick="copiarTexto('${id}')"]`);
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '✅';
+            setTimeout(() => { btn.innerHTML = originalText; }, 2000);
+        });
+    }
+
+    // Animaciones Scroll
     const observerOptions = { root: document.querySelector('.scroll-container'), threshold: 0.1 };
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -467,6 +527,7 @@
 
     document.querySelectorAll('.anim-up, .anim-fade').forEach(el => observer.observe(el));
 
+    // Contador
     const targetDate = new Date("Sep 19, 2026 14:30:00").getTime();
     const timerEl = document.getElementById('timer');
 
