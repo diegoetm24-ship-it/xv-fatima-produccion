@@ -198,7 +198,7 @@
         </div>
     </section>
 
-    <!-- PENSAMIENTO 1 (Textura Floral 1) -->
+    <!-- PENSAMIENTO 1 -->
     <section class="full-screen floral-bg-1">
         <div class="anim-up thought-card">
             <p class="thought-text">
@@ -207,7 +207,7 @@
         </div>
     </section>
 
-    <!-- 2. PADRES Y PADRINOS (Textura Floral 2) -->
+    <!-- 2. PADRES Y PADRINOS -->
     <section class="split-screen">
         <div class="img-half" style="background-image: url('img/QB5A9177.jpg');"></div>
         <div class="text-half anim-up floral-bg-2">
@@ -221,7 +221,7 @@
         </div>
     </section>
 
-    <!-- PENSAMIENTO 2 (Textura Floral 1) -->
+    <!-- PENSAMIENTO 2 -->
     <section class="full-screen floral-bg-1">
         <div class="anim-up thought-card">
             <h2 class="cursive-subtitle" style="font-size: 2.5rem; margin-bottom: 15px;">Familia y Amigos</h2>
@@ -245,7 +245,7 @@
         </div>
     </section>
 
-    <!-- 4. DRESS CODE (Textura Floral 2) -->
+    <!-- 4. DRESS CODE -->
     <section class="full-screen floral-bg-2">
         <div class="anim-up" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; text-align: center;">
             <div class="elegant-label" style="font-size: 1.5rem; letter-spacing: 6px;">Dress Code</div>
@@ -259,14 +259,13 @@
                 </g>
             </svg>
             
-            <h2 class="cursive-subtitle" style="font-size: 5.5rem; margin: 0; line-height: 1; transform: translateX(-20px);">Formal (👢)</h2>
-            <p style="font-size: 1.6rem; font-weight: 600; color: var(--gold-accent); margin-top: 10px; letter-spacing: 2px; text-transform: uppercase;">
-                
-            </p>
+            <h2 class="cursive-subtitle" style="font-size: 5.5rem; margin: 0; line-height: 1; transform: translateX(-10px); display: flex; align-items: center; justify-content: center; gap: 15px;">
+                Formal <span style="font-family: sans-serif; font-size: 3.5rem;">👢</span>
+            </h2>
         </div>
-    </section>5
+    </section>
 
-    <!-- 5. ITINERARIO (Textura Floral 1) -->
+    <!-- 5. ITINERARIO -->
     <section class="auto-screen floral-bg-1">
         <div class="anim-up" style="width: 100%; text-align: center;">
             <h2 class="cursive-subtitle" style="color: var(--gold-accent); font-size: 4rem; margin-bottom: 10px;">Itinerario</h2>
@@ -325,7 +324,7 @@
         </div>
     </section>
 
-    <!-- 6. GUESTBOOK / PENSAMIENTOS (Textura Floral 2) -->
+    <!-- 6. GUESTBOOK / PENSAMIENTOS -->
     <section class="auto-screen floral-bg-2">
         <div class="anim-up thought-card" style="width: 100%; max-width: 500px; text-align: center;">
             <h2 class="cursive-subtitle" style="font-size: 3.5rem; margin-bottom: 10px;">Libro de Visitas</h2>
@@ -339,15 +338,12 @@
         </div>
     </section>
 
-    <!-- 7. RSVP CON WHATSAPP (Textura Floral 1) -->
+    <!-- 7. RSVP CON WHATSAPP -->
     <section class="split-screen">
         <div class="img-half" style="background-image: url('img/foto-rsvp.jpg'); background-position: center;"></div>
         <div class="text-half anim-up floral-bg-1">
             <h2 class="cursive-subtitle" style="font-size: 3.5rem;">Confirmación</h2>
-            <p style="font-size: 1.2rem;">Familia <strong id="fam-name" style="color: var(--gold-accent); font-size: 1.4rem;">Invitado</strong></p>
-            <p style="font-size: 1rem;">Pases reservados: <strong id="pass-count">0</strong></p>
-            
-            <div style="margin-top: 25px;">
+            <div style="margin-top: 15px;">
                 <button class="btn-gold" onclick="confirmarWhatsApp()">Confirmar por WhatsApp 📱</button>
             </div>
         </div>
@@ -402,21 +398,19 @@
         isPlaying = !isPlaying;
     });
 
+    // Captura de variables para armar el string de WhatsApp dinámicamente, aunque no se impriman en pantalla.
     const urlParams = new URLSearchParams(window.location.search);
-    const family = urlParams.get('f') || 'Especial';
+    const family = urlParams.get('f') || '';
     const passes = parseInt(urlParams.get('p')) || 1;
-
-    document.getElementById('fam-name').innerText = family;
-    document.getElementById('pass-count').innerText = passes;
 
     function confirmarWhatsApp() {
         const numeroTelefono = "525500000000"; 
-        const mensaje = `Hola, confirmo la asistencia de la Familia ${family} (${passes} pases) a los XV años de Fátima.`;
+        const nombreFamilia = family ? `Familia ${family}` : "mi familia";
+        const mensaje = `Hola, confirmo la asistencia de ${nombreFamilia} (${passes} pases) a los XV años de Fátima.`;
         const url = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
         window.open(url, '_blank');
     }
 
-    // --- NUEVA LÓGICA DE API DE CORREOS (FormSubmit) ---
     function guardarMensaje() {
         const name = document.getElementById('gb-name').value;
         const msg = document.getElementById('gb-message').value;
@@ -427,12 +421,10 @@
             return;
         }
 
-        // Bloquear botón para evitar doble clic
         btn.innerText = "Enviando... ⏳";
         btn.disabled = true;
 
-        // INYECCIÓN DE CORREO: Cambiar correo aquí para el cliente final
-        fetch("https://formsubmit.co/ajax/diegoetm24@gmail.com", {
+        fetch("https://formsubmit.co/ajax/fatimanataliagilalvaradonolasco1@gmail.com", {
             method: "POST",
             headers: { 
                 'Content-Type': 'application/json',
