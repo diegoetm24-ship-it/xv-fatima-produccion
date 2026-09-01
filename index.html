@@ -176,10 +176,38 @@
             font-style: italic;
         }
         
-        .donation-amounts p {
-            margin: 5px 0;
-            font-size: 1.15rem;
+        /* ESTILOS DEL MODAL (NUEVA ARQUITECTURA) */
+        .modal-overlay {
+            display: none; 
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 9999;
+            justify-content: center; align-items: center;
+            backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background: var(--bg-light);
+            border: 1px solid var(--gold-accent);
+            border-radius: 10px;
+            width: 90%; max-width: 400px;
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            font-family: var(--font-serif);
             color: var(--text-dark);
+        }
+        .modal-btn-close {
+            background: #999; color: white;
+            border: none; padding: 10px 30px; border-radius: 20px;
+            margin-top: 25px; font-size: 1rem; cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2); font-family: var(--font-serif);
+        }
+        .donation-amounts p { margin: 5px 0; font-size: 1.15rem; color: var(--text-dark); }
+        .data-copy-row {
+            display: flex; justify-content: space-between; align-items: center; 
+            background: #fff; padding: 8px 15px; border-radius: 5px; 
+            border: 1px solid #ddd; margin-bottom: 10px;
         }
     </style>
 </head>
@@ -254,7 +282,6 @@
     <!-- 6. CÓDIGO DE VESTIMENTA (Textura Floral 2) -->
     <section class="full-screen floral-bg-2">
         <div class="anim-up" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; text-align: center;">
-            <!-- Texto cambiado a español -->
             <div class="elegant-label" style="font-size: 1.5rem; letter-spacing: 6px;">Código de Vestimenta</div>
             
             <svg width="180" height="180" viewBox="0 0 100 100" style="margin: 20px 0 10px 0; transform: translateX(-6px);">
@@ -266,7 +293,6 @@
                 </g>
             </svg>
             
-            <!-- Etiqueta Formal limpia y la bota centrada abajo -->
             <h2 class="cursive-subtitle" style="font-size: 5.5rem; margin: 0; line-height: 1;">Formal</h2>
             <div style="font-family: sans-serif; font-size: 2.2rem; margin-top: 15px; color: var(--text-dark);">( 👢 )</div>
         </div>
@@ -331,44 +357,17 @@
         </div>
     </section>
 
-    <!-- 8. OBSEQUIOS / MESA DE REGALOS (Textura Floral 2) -->
+    <!-- 8. OBSEQUIOS / BOTÓN MODAL (Textura Floral 2) -->
     <section class="auto-screen floral-bg-2">
-        <div class="anim-up thought-card" style="width: 100%; max-width: 500px; text-align: center;">
-            <div class="elegant-label" style="font-size: 1.5rem; letter-spacing: 6px;">Mesa de Regalos</div>
-            <p style="font-family: var(--font-serif); font-size: 1.2rem; line-height: 1.6; margin: 15px 0;">El mejor regalo es tu presencia, pero si deseas tenerme un detalle, te lo agradeceré de corazón.</p>
-
-            <div style="background: rgba(255,255,255,0.8); border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 10px; padding: 20px; margin-top: 20px; text-align: left;">
-                <p style="margin: 5px 0; font-size: 1.1rem;"><strong>Banco:</strong> Scotiabank</p>
-                <p style="margin: 5px 0; font-size: 1.1rem;"><strong>Titular:</strong> Héctor Alfredo Gil Pena</p>
-                <p style="margin: 5px 0; font-size: 1.1rem;"><strong>Concepto:</strong> Fatima</p>
-
-                <div style="margin-top: 15px;">
-                    <p style="margin: 0; font-size: 1rem; color: #666;">Cuenta</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 10px; border-radius: 5px; border: 1px solid #ddd;">
-                        <span style="font-size: 1.2rem; font-weight: bold; letter-spacing: 1px; color: var(--text-dark);" id="copy-cuenta">25605583344</span>
-                        <button onclick="copiarTexto('copy-cuenta')" style="background: none; border: none; font-size: 1.2rem; cursor: pointer;" title="Copiar al portapapeles">📋</button>
-                    </div>
-                </div>
-
-                <div style="margin-top: 15px;">
-                    <p style="margin: 0; font-size: 1rem; color: #666;">CLABE</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 10px; border-radius: 5px; border: 1px solid #ddd;">
-                        <span style="font-size: 1.2rem; font-weight: bold; letter-spacing: 1px; color: var(--text-dark);" id="copy-clabe">044180256055833444</span>
-                        <button onclick="copiarTexto('copy-clabe')" style="background: none; border: none; font-size: 1.2rem; cursor: pointer;" title="Copiar al portapapeles">📋</button>
-                    </div>
-                </div>
-
-                <!-- Montos sugeridos -->
-                <div class="donation-amounts" style="margin-top: 20px; text-align: center;">
-                    <p style="margin-bottom: 10px; font-weight: 600; color: #666;">Montos que puedes depositar:</p>
-                    <p>$500</p>
-                    <p>$1000</p>
-                    <p>$1500</p>
-                    <p>$3000</p>
-                    <p>$5000</p>
-                    <p>Otra cantidad</p>
-                </div>
+        <div class="anim-up thought-card" style="width: 100%; max-width: 500px; text-align: center; background: transparent; box-shadow: none; border: none;">
+            <h2 class="cursive-subtitle" style="font-size: 4rem;">Regalos</h2>
+            <p style="font-family: var(--font-serif); font-size: 1.2rem; line-height: 1.6; margin: 15px 0;">Mi mejor regalo es tu presencia, pero si algo me quieres obsequiar lo sabré apreciar.</p>
+            
+            <div style="margin: 20px 0;">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--text-dark)" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M7 15h.01M11 15h.01M15 15h.01"/></svg>
             </div>
+
+            <button class="btn-gold" style="border-radius: 5px; padding: 12px 30px; letter-spacing: 2px;" onclick="document.getElementById('bankModal').style.display='flex'">VER OPCIONES</button>
         </div>
     </section>
 
@@ -409,6 +408,44 @@
 
 </div>
 
+<!-- EL MODAL (VENTANA EMERGENTE DE BANCO) -->
+<div id="bankModal" class="modal-overlay">
+    <div class="modal-content">
+        <h3 style="margin-top:0; font-family: var(--font-serif); color: var(--gold-accent); font-size: 1.8rem; font-weight: normal;">Datos Bancarios</h3>
+        <p style="font-size: 1.1rem; margin: 10px 0;"><strong>Banco:</strong> Scotiabank</p>
+        <p style="font-size: 1.1rem; margin: 10px 0;"><strong>Titular:</strong> Héctor Alfredo gil pena</p>
+        <p style="font-size: 1.1rem; margin: 10px 0;"><strong>Concepto:</strong> Fatima</p>
+
+        <div style="margin-top: 20px;">
+            <p style="margin: 0 0 5px 0; font-size: 1rem; color: #666; text-align: left;">Cuenta</p>
+            <div class="data-copy-row">
+                <span style="font-size: 1.1rem; font-weight: bold; letter-spacing: 1px;" id="copy-cuenta">25605583344</span>
+                <button onclick="copiarTexto('copy-cuenta')" style="background: none; border: none; font-size: 1.2rem; cursor: pointer;">📋</button>
+            </div>
+        </div>
+
+        <div style="margin-top: 15px;">
+            <p style="margin: 0 0 5px 0; font-size: 1rem; color: #666; text-align: left;">CLABE</p>
+            <div class="data-copy-row">
+                <span style="font-size: 1.1rem; font-weight: bold; letter-spacing: 1px;" id="copy-clabe">044180256055833444</span>
+                <button onclick="copiarTexto('copy-clabe')" style="background: none; border: none; font-size: 1.2rem; cursor: pointer;">📋</button>
+            </div>
+        </div>
+
+        <div class="donation-amounts" style="margin-top: 20px;">
+            <p style="margin-bottom: 10px; font-weight: 600; color: #666;">Montos que puedes depositar:</p>
+            <p>$500</p>
+            <p>$1000</p>
+            <p>$1500</p>
+            <p>$3000</p>
+            <p>$5000</p>
+            <p>Otra cantidad</p>
+        </div>
+
+        <button class="modal-btn-close" onclick="document.getElementById('bankModal').style.display='none'">Cerrar</button>
+    </div>
+</div>
+
 <script>
     // Reproductor de Audio
     const musicBtn = document.getElementById('musicBtn');
@@ -446,6 +483,24 @@
         isPlaying = !isPlaying;
     });
 
+    // Cierre del modal si dan clic afuera
+    document.getElementById('bankModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            this.style.display = 'none';
+        }
+    });
+
+    // Lógica UX de Copiar Portapapeles
+    function copiarTexto(id) {
+        const texto = document.getElementById(id).innerText;
+        navigator.clipboard.writeText(texto).then(() => {
+            const btn = document.querySelector(`button[onclick="copiarTexto('${id}')"]`);
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '✅';
+            setTimeout(() => { btn.innerHTML = originalText; }, 2000);
+        });
+    }
+
     // Lógica de WhatsApp
     const urlParams = new URLSearchParams(window.location.search);
     const family = urlParams.get('f') || '';
@@ -458,7 +513,7 @@
         window.open(url, '_blank');
     }
 
-    // Lógica de Formulario
+    // Lógica de Formulario FormSubmit
     function guardarMensaje() {
         const name = document.getElementById('gb-name').value;
         const msg = document.getElementById('gb-message').value;
@@ -500,17 +555,6 @@
             alert("Hubo un problema de conexión al enviar el mensaje. Intenta de nuevo.");
             btn.innerText = "Dejar mensaje 💌";
             btn.disabled = false;
-        });
-    }
-
-    // Lógica UX de Copiar Portapapeles
-    function copiarTexto(id) {
-        const texto = document.getElementById(id).innerText;
-        navigator.clipboard.writeText(texto).then(() => {
-            const btn = document.querySelector(`button[onclick="copiarTexto('${id}')"]`);
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '✅';
-            setTimeout(() => { btn.innerHTML = originalText; }, 2000);
         });
     }
 
