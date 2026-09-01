@@ -176,7 +176,7 @@
             font-style: italic;
         }
         
-        /* ESTILOS DEL MODAL (NUEVA ARQUITECTURA) */
+        /* ESTILOS DEL MODAL */
         .modal-overlay {
             display: none; 
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -412,28 +412,36 @@
 <div id="bankModal" class="modal-overlay">
     <div class="modal-content">
         <h3 style="margin-top:0; font-family: var(--font-serif); color: var(--gold-accent); font-size: 1.8rem; font-weight: normal;">Datos Bancarios</h3>
-        <p style="font-size: 1.1rem; margin: 10px 0;"><strong>Banco:</strong> Scotiabank</p>
-        <p style="font-size: 1.1rem; margin: 10px 0;"><strong>Titular:</strong> Héctor Alfredo Gil Pena</p>
+        <p style="font-size: 1.1rem; margin: 10px 0;"><strong>Banco:</strong> BBVA</p>
+        <p style="font-size: 1.1rem; margin: 10px 0;"><strong>Titular:</strong> Fatima Natalia Gil Alvarado</p>
         <p style="font-size: 1.1rem; margin: 10px 0;"><strong>Concepto:</strong> Fatima</p>
 
         <div style="margin-top: 20px;">
             <p style="margin: 0 0 5px 0; font-size: 1rem; color: #666; text-align: left;">Cuenta</p>
             <div class="data-copy-row">
-                <span style="font-size: 1.1rem; font-weight: bold; letter-spacing: 1px;" id="copy-cuenta">25605583344</span>
+                <span style="font-size: 1.1rem; font-weight: bold; letter-spacing: 1px;" id="copy-cuenta">1580438458</span>
                 <button onclick="copiarTexto('copy-cuenta')" style="background: none; border: none; font-size: 1.2rem; cursor: pointer;">📋</button>
+            </div>
+        </div>
+        
+        <div style="margin-top: 15px;">
+            <p style="margin: 0 0 5px 0; font-size: 1rem; color: #666; text-align: left;">Tarjeta</p>
+            <div class="data-copy-row">
+                <span style="font-size: 1.1rem; font-weight: bold; letter-spacing: 1px;" id="copy-tarjeta">4152314679589682</span>
+                <button onclick="copiarTexto('copy-tarjeta')" style="background: none; border: none; font-size: 1.2rem; cursor: pointer;">📋</button>
             </div>
         </div>
 
         <div style="margin-top: 15px;">
             <p style="margin: 0 0 5px 0; font-size: 1rem; color: #666; text-align: left;">CLABE</p>
             <div class="data-copy-row">
-                <span style="font-size: 1.1rem; font-weight: bold; letter-spacing: 1px;" id="copy-clabe">044180256055833444</span>
+                <span style="font-size: 1.1rem; font-weight: bold; letter-spacing: 1px;" id="copy-clabe">012180015804384582</span>
                 <button onclick="copiarTexto('copy-clabe')" style="background: none; border: none; font-size: 1.2rem; cursor: pointer;">📋</button>
             </div>
         </div>
 
         <div class="donation-amounts" style="margin-top: 20px;">
-            <p style="margin-bottom: 10px; font-weight: 600; color: #666;">Montos que puedes depositar:</p>
+            <p style="margin-bottom: 10px; font-weight: 600; color: #666;">Montos sugeridos:</p>
             <p>$500</p>
             <p>$1000</p>
             <p>$1500</p>
@@ -527,7 +535,7 @@
         btn.innerText = "Enviando... ⏳";
         btn.disabled = true;
 
-        fetch("https://formsubmit.co/ajax/fatimanataliagilalvarado1@gmail.com", {
+        fetch("https://formsubmit.co/ajax/fatimanataliagilalvaradonolasco1@gmail.com", {
             method: "POST",
             headers: { 
                 'Content-Type': 'application/json',
